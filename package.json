@@ -1,0 +1,24 @@
+{
+  "name": "winix",
+  "type": "module",
+  "version": "0.0.2",
+  "main": "dist/bundle.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Gaurav Thakur <gthakur581@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --minify --external react && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --project tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.46",
+    "bun-types": "latest",
+    "react": "^18.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
